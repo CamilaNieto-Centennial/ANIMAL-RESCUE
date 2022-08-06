@@ -63,7 +63,7 @@ def login_requiredStaff(f):
     return decorated_function
 
 
-##def lookup(symbol):
+def lookup(symbol):
     """Look up quote for symbol."""
 
     # Contact API
@@ -86,7 +86,7 @@ def login_requiredStaff(f):
     except (KeyError, TypeError, ValueError):
         return None
 
-##
+
 
 def usd(value):
     """Format value as USD."""
