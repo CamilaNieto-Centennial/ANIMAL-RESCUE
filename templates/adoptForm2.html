@@ -1,0 +1,209 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Adopt Form
+{% endblock %}
+
+{% block main %}
+
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Adoption Form</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Please read each statement carefully and consider each one individually.
+                        Please select an answer or type it.
+                        Give only one answer for each question.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container-fluid padding" id="fullForm2">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12">
+                <div class="centerForm" style="text-align:left;">
+
+                <!--Form-->
+                <!--<div class="col-md-12 col-lg-12">-->
+                    <form name='registration'action="/adoptForm2" method="post"><!--method="post" onsubmit="return formValidation()"-->
+
+
+                        <h2>Home details: </h2>
+                        <p>Please fill out the following questions to know the details about your home</p>
+                        <!--<form name='registration_2'>-->
+                            <!--Menu-->
+
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                                <label for="houseType" class="form-label">Housing Type</label>
+                                <select name="houseType" id="houseType" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="House">House</option>
+                                    <option value="Condo">Condo</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Townhouse">Townhouse</option>
+                                    <option value="Dorm">Dorm</option>
+                                    <option value="Mobile Home">Mobile Home</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" style="padding-bottom: 0rem;">
+                                <label for="adultsNo" class="form-label">How many adults (over 18) including yourself are in your home?</label>
+                            </div>
+                            <div class="col-md-3 col-lg-2" style="padding-top: 0rem; padding-bottom: 0rem;">
+                                <input type="number" name="adultsNo" id="adultsNo" placeholder="Number" class="form-control" required="required" autocomplete="off"/>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-10"> <!--style: display: none;-->
+                                <label for="minorsText" class="form-label">Please tell us the number of minors (under 18) living in the home and indicate their ages. </label>
+                                <div id="minorsTextHelp" class="form-text">If you don't have minors, please type "I don't have kids."</div>
+                                <textarea class="form-control" name="minorsText" id="minorsText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" style="padding-bottom: 0rem;">
+                                <label for="frequency" class="form-label">Which is best describes how often someone is home?</label>
+                            </div>
+                            <div class="col-md-5 col-lg-4" style="padding-top: 0rem; padding-bottom: 0rem;">
+                                <select name="frequency" id="frequency" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="Always someone home">Always someone home</option>
+                                    <option value="Away for 30-60 minutes at a time">Away for 30-60 minutes at a time</option>
+                                    <option value="Often away for 2-3 hours">Often away for 2-3 hours</option>
+                                    <option value="Often away for 4-6 hours">Often away for 4-6 hours</option>
+                                    <option value="Mostly away (more than 6 hours)">Mostly away (more than 6 hours)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr class="hrForm2">
+                        <h2>More information: </h2>
+                        <p>Please fill out the following questions to know some extra details</p>
+
+
+                        <div class="row">
+                            <div class="col-md-8"> <!--style: display: none;-->
+                                <label for="petsBeforeMore" class="form-label">Have you had pet(s) before?</label>
+                                <div id="petsBeforeMoreHelp" class="form-text">If you haven't had pet(s) before, please type "I haven't had pet(s) before."</div>
+                                <textarea class="form-control" name="petsBeforeText" id="petsBeforeText" style="height: 100px" required="required" autocomplete="off" placeholder="Please specify which pet(s) you had before"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-10"> <!--style: display: none;-->
+                                <label for="petsCurrentlyMore" class="form-label">Please tell us about your current pet(s). (Age, gender, activity level, personalities)</label>
+                                <div id="petsCurrentlyMoreHelp" class="form-text">If you don't have pet(s), please type "I don't have pets."</div>
+                                <textarea class="form-control" name="petsCurrentText" id="petsCurrentText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <hr class="hrForm">
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="visit" class="form-label">Are you planning to visit the location to adopt?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="visit" value="Yes" id="visitY">
+                                    <label class="form-check-label" for="visitY">
+                                      Yes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="visit" value="No" id="visitN">
+                                    <label class="form-check-label" for="visitN">
+                                      No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" style="padding-bottom: 0rem;">
+                                <label for="whenAdopt" class="form-label">How soon would you like to adopt?</label>
+                            </div>
+                            <div class="col-md-5 col-lg-3" style="padding-top: 0rem; padding-bottom: 0rem;">
+                                <select name="whenAdopt" id="whenAdopt" class="form-select" required="required" onchange="yesnoCheck(this);"><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="Right away!">Right away!</option>
+                                    <option value="Within the next week">Within the next week</option>
+                                    <option value="Within the next 2-3 weeks">Within the next 2-3 weeks</option>
+                                    <option value="Within the next month">Within the next month</option>
+                                    <option value="Within the next 2-5 months">Within the next 2-5 months</option>
+                                    <option value="Within the next 6 months">Within the next 6 months</option>
+                                    <option value="More than 6 months">More than 6 months</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-md-5 col-lg-4 col-xl-3" id="ifYes5" style="display: none; padding-top: 0rem; padding-bottom: 0rem;">
+                                <input type="text" name="whenAdoptType" id="whenAdoptType" class="form-control" required="required" autocomplete="off"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10"> <!--style: display: none;-->
+                                <label for="commentTextLabel" class="form-label">Do you have any questions?</label>
+                                <textarea class="form-control" name="commentText" id="commentText" placeholder="If so, plese type here your question" style="height: 100px" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="alert alert-dark" role="alert">
+                                    <h5 class="alert-heading">Note</h5>
+                                    <p>Thank you very much for your interest. Please remember that while we review every application carefully, submitting one does not claim an animal. Please be aware that during busy times it may take up to 72 hours for an adoption specialist to reach out to you through email and further make an appointment, so you can visit the pet that you are interested, in the shelter that is currently located.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!--Submit button>-->
+
+                            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                            <div id="buttonContainer">
+                                <input id="orderButton" type="submit" name="submit" class="btn btn-primary" value="Submit" onClick="return formValidation();" />
+                                <input id="resetButton" type="reset" name="reset" class="btn btn-outline-secondary" value="Clear Form" onClick="return confirmreset()" />
+                            </div>
+
+                        </form>
+                <!--</div>-->
+            </div>
+            </div>
+            </div>
+        </div>
+        <!--End fullForm2-->
+
+
+
+
+        <!--Pagination-->
+        <!--<ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item">
+              <a class="page-link" href="/adoptForm">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/adoptForm">1</a></li>
+            <li class="page-item active"><a class="page-link" href="/adoptForm2">2</a></li>
+            <li class="page-item disabled">
+              <a class="page-link">Next</a>
+            </li>
+        </ul>-->
+
+
+
+
+        <script src="/indexA2"></script>
+
+{% endblock %}

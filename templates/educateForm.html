@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Educate Form
+{% endblock %}
+
+{% block main %}
+
+
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Educate about caring the animals</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Please read each statement carefully and consider each one individually.
+                        Please select an answer or type it.
+                        Give only one answer for each question.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid padding" id="fullForm1">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12">
+                <div class="centerForm" style="text-align:left;">
+                    <h2>Contact information: </h2>
+
+                <!--Form-->
+                <!--<div class="col-md-12 col-lg-12">-->
+                    <form name='registration' action="/educateForm" method="post"><!--method="post" onsubmit="return formValidation()"-->
+                        <!--onsubmit="return false"-->
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="FName" class="form-label">First name</label>
+                                <input type="text" name="FName" placeholder="Mark" id="FName" class="form-control" required="required" autocomplete="off"/>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="LName" class="form-label">Last name</label>
+                                <input type="text" name="LName" placeholder="Smith" id="LName" class="form-control" required="required" autocomplete="off"/>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <!--<div class="col-md-5">
+                                <label for="phone" class="form-label">Phone number</label>
+                                <input type="tel" name="phone" id="phone" placeholder="123-123-1234" class="form-control" required="required" autocomplete="off"/>
+                            </div>-->
+                            <div class="col-md-5">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" name="email" id="email" placeholder="mark@smith.com" class="form-control" aria-describedby="emailHelp" required="required" autocomplete="off">
+                                <!--<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                            </div>
+                        </div>
+
+                        <!--DISPLAY NONE - STYLE-->
+                        <div class="row" style="display: none;">
+                            <div class="col-md-10">
+                                <label for="skillsLabel" class="form-label">What are your skills?</label>
+                                <textarea class="form-control" name="skillsText" id="skillsText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+
+
+                            <!--Submit button>-->
+
+                            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                            <div id="buttonContainer">
+
+                                <!--INPUT - submit -->
+                                <input id="orderButton" type="submit" name="submit" class="btn btn-primary" value="NEXT" onClick="return formValidation();" />
+
+                                <!--Reset-->
+                                <input id="resetButton" type="reset" name="reset" class="btn btn-outline-secondary" value="Clear Form" onClick="return confirmreset()" />
+
+                            </div>
+
+                        </form>
+                <!--</div>-->
+            </div>
+            </div>
+            </div>
+        </div>
+        <!--End fullForm1-->
+
+
+
+
+
+        <!--Pagination-->
+        <!--<ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="/educateForm">1</a></li>
+            <li class="page-item"><a class="page-link" href="/educateForm2">2</a></li>
+            <li class="page-item">
+              <a class="page-link" href="/educateForm2">Next</a>
+            </li>
+        </ul>-->
+
+
+
+        <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>-->
+        <!--<script src="/educate"></script>-->
+
+
+        <script src="/educate"></script>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!--Icon link-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <link href="../../static/styles.css" rel="stylesheet">
+
+        <title>Staff: {% block title %}{% endblock %}</title>
+        <link rel="icon" href="https://i.postimg.cc/8PnnYrtJ/BIG-photo-Nbg.png"><!--../photos/logo/BIG photo Nbg.png-->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        <style>
+        /* Principals buttoms */
+        .btn-primary{
+            background-color: #8b0d32;
+            border: 0px solid #8b0d32;
+            font-weight : bold ;
+        }
+        .btn-primary:hover{
+            background-color: #5f0822;
+            border: 0px solid #5f0822;
+            font-weight : bold ;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #33866d;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/staff/"><img src="https://i.postimg.cc/0yMH12Bt/logoNew2.png" alt="ANIMAL RESCUE" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    {% if session["user_id"] %}
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/staff/">HOME</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            NEW REQUESTS
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="min-width: 8rem;">
+                                <li><a class="dropdown-item" href="/staff/newAdopter">NEW ADOPTER</a></li>
+                                <li><a class="dropdown-item" href="/staff/newVolunteer">NEW VOLUNTEER</a></li>
+                                <li><a class="dropdown-item" href="/staff/newFosterer">NEW FOSTERER</a></li>
+                                <li><a class="dropdown-item" href="/staff/newEducator">NEW EDUCATOR</a></li>
+                                <!--<li><a class="dropdown-item" href="../join/educateForm.html">EDUCATE</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff/logout">LOG OUT</a>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>-->
+                    </ul>
+                    <!--<ul class="navbar-nav ms-auto mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                    </ul>-->
+                    {% else %}
+                        <ul class="navbar-nav ms-auto"><!--mt-2-->
+                            <li class="nav-item"><a class="nav-link" href="/staff/register">REGISTER</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/staff/login">LOG IN</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary mb-0 text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer style="background-color: #33866d">
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <img src="https://i.postimg.cc/0yMH12Bt/logoNew2.png" alt="Logo B/W" class="logo2">
+                        <hr class="light">
+                        <p>555-555-5555</p>
+                        <p>email@gmail.com</p>
+                        <p>100 Street Name</p>
+                        <p>City, State, 0000</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light">
+                        <h5>Our hours</h5>
+                        <hr class="light">
+                        <p>Monday: 9am-5pm</p>
+                        <p>Saturday: 10am-4pm</p>
+                        <p>Sunday: closed</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light">
+                        <h5>Service Areas</h5>
+                        <hr class="light">
+                        <p>City, State, 0000</p>
+                        <p>City, State, 0000</p>
+                        <p>City, State, 0000</p>
+                        <p>City, State, 0000</p>
+                    </div>
+                    <div class="col-12">
+                        <hr class="light">
+                        <h5>&copy; Camila Nieto CS50-Final Project</h5>
+                    </div>
+                </div>
+            </div>
+            </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+        <script src="/staff/scriptStaff"></script>
+    </body>
+
+</html>

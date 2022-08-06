@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Foster Form
+{% endblock %}
+
+{% block main %}
+
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Foster Form</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Please read each statement carefully and consider each one individually.
+                        Please select an answer or type it.
+                        Give only one answer for each question.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container-fluid padding" id="fullForm2">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12">
+                <div class="centerForm" style="text-align:left;">
+
+                <!--Form-->
+                <!--<div class="col-md-12 col-lg-12">-->
+                    <form name='registration' action="/fosterForm2" method="post"><!--method="post" onsubmit="return formValidation()"-->
+
+
+                        <h2>Foster Information: </h2>
+                        <p>Please fill out the following questions to know the details about your home</p>
+                        <!--<form name='registration_2'>-->
+                            <!--Menu-->
+
+
+
+                        <div class="row">
+                            <div class="col-md-10" > <!--style: display: none;-->
+                                <label for="petsCurrentlyMore" class="form-label">Please tell us about your current pet(s). (Age, gender, activity level, personalities).</label>
+                                <div id="petsCurrentlyMoreHelp" class="form-text">If you don't have pets, please type "I don't have pets."</div>
+                                <textarea class="form-control" name="petsCurrentText" id="petsCurrentText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <!--DISPLAY NONE - STYLE-->
+                        <div class="row" style="display: none;">
+                            <div class="col-md-10">
+                                <label for="skillsLabel" class="form-label">What are your skills?</label>
+                                <textarea class="form-control" name="skillsText" id="skillsText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8 box" id="radio1">
+                                <label for="minorsNo" class="form-label">Do you have children at home?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="minorsNo" id="minorsNoY" value="Yes" onchange="yesnoCheck();">
+                                    <label class="form-check-label" for="minorsNoY">
+                                      Yes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="minorsNo" id="minorsNoN" value="No">
+                                    <label class="form-check-label" for="minorsNoN">
+                                      No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                                <label for="houseType" class="form-label">Housing Type</label>
+                                <select name="houseType" id="houseType" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="House">House</option>
+                                    <option value="Condo">Condo</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Townhouse">Townhouse</option>
+                                    <option value="Dorm">Dorm</option>
+                                    <option value="Mobile Home">Mobile Home</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-8 box" id="radio1">
+                                <label for="fencedYard" class="form-label">Do you have fenced yard?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="fencedYard" id="fencedYardY" value="Yes" onchange="yesnoCheck();">
+                                    <label class="form-check-label" for="fencedYardY">
+                                      Yes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="fencedYard" id="fencedYardN" value="No">
+                                    <label class="form-check-label" for="fencedYardN">
+                                      No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <label for="addExpLabel" class="form-label">Please share any additional experience of value (previous fostering, worked in animal welfare, animal training, etc...) that you have.</label>
+                                <textarea class="form-control" name="addExpText" id="addExpText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <!--
+                            padding-top: 1rem;
+                            padding-right: 1rem;
+                            padding-bottom: 1rem;
+                            padding-left: 1rem;
+                        -->
+
+                        <hr class="hrForm2">
+                        <h2>More information: </h2>
+                        <!--<p>Please fill out the following questions to know some extra details</p>-->
+
+
+                        <div class="row">
+
+                            <div class="col-md-10 col-lg-8">
+                                <label for="animalsFosterLabel" class="form-label">What type(s) of animals are you interested in fostering?</label>
+                                <div id="animalsFosterHelp" class="form-text">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options</div>
+                                <select name="animalsFoster" id="animalsFoster" class="form-select" multiple required><!--aria-label="Default select example"-->
+                                    <!--<option value="Default">(Select a choice)</option>-->
+                                    <option value="Large Dogs">Large Dogs</option>
+                                    <option value="Small Dogs">Small Dogs</option>
+                                    <option value="Puppy(s)">Puppy(s)</option>
+                                    <option value="Fearful Large Dogs">Fearful Large Dogs</option>
+                                    <option value="Fearful Small Dogs">Fearful Small Dogs</option>
+                                    <option value="Energetic Small Dogs">Energetic Small Dogs</option>
+                                    <option value="Energetic Large Dogs">Energetic Large Dogs</option>
+                                    <option value="Large Dogs with Behavior Challenges">Large Dogs with Behavior Challenges</option>
+                                    <option value="Small Dogs with Behavior Challenges">Small Dogs with Behavior Challenges</option>
+                                    <option value="Dogs with Medical Needs">Dogs with Medical Needs </option>
+                                    <option value="Cats">Cats</option>
+                                    <option value="Kitten(s)">Kitten(s)</option>
+                                    <option value="Fearful cats">Fearful cats</option>
+                                    <option value="Energetic cats">Energetic cats</option>
+                                    <option value="Cats with Medical Needs">Cats with Medical Needs</option>
+                                    <option value="Bird">Bird</option>
+                                    <option value="Nestling">Nestling</option>
+                                    <option value="Bird with Medical Needs">Bird with Medical Needs</option>
+                                    <option value="Rabbit">Rabbit</option>
+                                    <option value="Baby Rabbit">Baby Rabbit</option>
+                                    <option value="Rabbit with Medical Needs">Rabbit with Medical Needs</option>
+                                    <option value="Rodent">Rodent</option>
+                                    <option value="Rodent with Medical Needs">Rodent with Medical Needs</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <hr class="hrForm2">
+                        <div class="row">
+                            <div class="col-md-10"> <!--style: display: none;-->
+                                <label for="commentTextLabel" class="form-label">Do you have any questions?</label>
+                                <textarea class="form-control" name="commentText" id="commentText" placeholder="If so, plese type here your question" style="height: 100px" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="alert alert-dark" role="alert">
+                                    <h5 class="alert-heading">Note</h5>
+                                    <p>Thank you very much for your interest. Please remember that while we review every application carefully, submitting one does not claim an animal. Please be aware that during busy times it may take up to 72 hours for an adoption specialist to reach out to you through email and further make an appointment, so you can visit the pet that you are interested, in the shelter that is currently located.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!--Submit button>-->
+
+                            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                            <div id="buttonContainer">
+                                <input id="orderButton" type="submit" name="submit" class="btn btn-primary" value="Submit" onClick="return formValidation();" />
+                                <input id="resetButton" type="reset" name="reset" class="btn btn-outline-secondary" value="Clear Form" onClick="return confirmreset()" />
+                            </div>
+
+                        </form>
+                <!--</div>-->
+            </div>
+            </div>
+            </div>
+        </div>
+        <!--End fullForm2-->
+
+
+
+
+        <!--Pagination-->
+        <!--<ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item">
+              <a class="page-link" href="/fosterForm">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/fosterForm">1</a></li>
+            <li class="page-item active"><a class="page-link" href="/fosterForm2">2</a></li>
+            <li class="page-item disabled">
+              <a class="page-link">Next</a>
+            </li>
+        </ul>-->
+
+
+
+
+        <script src="/foster2"></script>
+
+{% endblock %}

@@ -1,0 +1,270 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Volunteer Form
+{% endblock %}
+
+{% block main %}
+
+
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Volunteer Form</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Please read each statement carefully and consider each one individually.
+                        Please select an answer or type it.
+                        Give only one answer for each question.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container-fluid padding" id="fullForm2">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12">
+                <div class="centerForm" style="text-align:left;">
+
+                <!--Form-->
+                <!--<div class="col-md-12 col-lg-12">-->
+                    <form name='registration' action="/volunteerForm2" method="post"><!--method="post" onsubmit="return formValidation()"-->
+
+
+                        <h2>About you: </h2>
+                        <p>Please fill out the following questions to know details about you</p>
+                        <!--<form name='registration_2'>-->
+                            <!--Menu-->
+
+                        <div class="row">
+                            <div class="col-md-6 col-lg-5 col-xl-4">
+                                <label for="whyVolunteerLabel" class="form-label">Why do you want to volunteer?</label>
+                                <select name="whyVolunteer" id="whyVolunteer" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="Court Ordered Community Service">Court Ordered Community Service</option>
+                                    <option value="Help Animals">Help Animals</option>
+                                    <option value="Personal Enrichment">Personal Enrichment</option>
+                                    <option value="School Credit/Service Hours">School Credit/Service Hours</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4 col-xl-3">
+                                <label for="enjoyLabel" class="form-label">What do you enjoy?</label>
+                                <div id="enjoyHelp" class="form-text">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options</div>
+                                <select name="enjoy" id="enjoy" class="form-select" multiple required><!--aria-label="Default select example"-->
+                                    <!--<option value="Default">(Select a choice)</option>-->
+                                    <option value="Fundraising">Fundraising</option>
+                                    <option value="Public Speaking">Public Speaking</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Socializing Cats">Socializing Cats</option>
+                                    <option value="Special Events Planning">Special Events Planning</option>
+                                    <option value="Walking Dogs">Walking Dogs</option>
+                                    <option value="Web Design">Web Design</option>
+                                    <option value="Working with the Public">Working with the Public</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <label for="gainLabel" class="form-label">What do you hope to gain from your volunteer experience?</label>
+                                <textarea class="form-control" name="gainText" id="gainText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <hr class="hrForm2">
+                        <h2>Availability: </h2>
+
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <label for="daysWeekLabel" class="form-label">Days on the week that you are available</label>
+                                <div id="daysWeekHelp" class="form-text">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options</div>
+                                <select name="daysWeek" id="daysWeek" class="form-select" multiple required><!--aria-label="Default select example"-->
+                                    <!--<option value="Default">(Select a choice)</option>-->
+                                    <option value="Sunday">Sunday</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="timesDayLabel" class="form-label">Times on the day that you are available</label>
+                                <div id="timesDayHelp" class="form-text">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options</div>
+                                <select name="timesDay" id="timesDay" class="form-select" multiple required><!--aria-label="Default select example"-->
+                                    <!--<option value="Default">(Select a choice)</option>-->
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+
+                        <hr class="hrForm2">
+                        <h2>Skills: </h2>
+
+
+
+                        <!--DISPLAY NONE - STYLE-->
+                        <div class="row" style="display: none;">
+                            <div class="col-md-10">
+                                <label for="skillsLabel" class="form-label">What are your skills?</label>
+                                <textarea class="form-control" name="skillsText" id="skillsText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-10" style="padding-bottom: 0rem;">
+                                <label for="skillsLabel" class="form-label">Skills: </label>
+                                <div id="skillsHelp" class="form-text">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options</div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-4" style="padding-top: 0rem;">
+                                <select name="skillsTxt" id="skillsTxt" class="form-select" multiple required>
+
+                                    <option value="Cat Handling Experience">Cat Handling Experience</option>
+                                    <option value="Data Entry">Data Entry</option>
+                                    <option value="Dog Handling Experience">Dog Handling Experience</option>
+                                    <option value="Driving Motor Vehicles">Driving Motor Vehicles</option>
+                                    <option value="Excellent Customer Service">Excellent Customer Service </option>
+                                    <option value="Leadership Skills">Leadership Skills</option>
+                                    <option value="Public Speaking Skills">Public Speaking Skills</option>
+                                    <option value="Sign Language">Sign Language</option>
+                                    <option value="Speak Other Language">Speak Other Language</option>
+                                    <option value="Vet Tech/Assistant">Vet Tech/Assistant</option>
+                                    <option value="Veterinarian DVM">Veterinarian DVM</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <label for="experienceLabel" class="form-label">Summarize your experience with animals and previous volunteer experience:</label>
+                                <textarea class="form-control" name="experienceText" id="experienceText" style="height: 100px" required="required" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+
+                        <hr class="hrForm2">
+                        <h2>Occupation Information: </h2>
+
+
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4">
+                                <label for="currentOcpLabel" class="form-label">Current Ocupation</label>
+                                <select name="currentOcp" id="currentOcp" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="Architecture Services">Architecture Services</option>
+                                    <option value="Arts">Arts</option>
+                                    <option value="Banking/Finance">Banking/Finance</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Educational/Training Services">Educational/Training Services</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Legal Services">Legal Services</option>
+                                    <option value="Marketing - Public Relations">Marketing - Public Relations</option>
+                                    <option value="Marketing - Web & Social Media">Marketing - Web & Social Media</option>
+                                    <option value="Medical Services">Medical Services</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Public Services">Public Services</option>
+                                    <option value="Restaurant/Hotel Services">Restaurant/Hotel Services</option>
+                                    <option value="Retail/Sales">Retail/Sales</option>
+                                    <option value="Retired">Retired</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Veterinary Industry">Veterinary Industry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                                <label for="yearsOcpLabel" class="form-label">Years in Occupation</label>
+                                <select name="yearsOcp" id="yearsOcp" class="form-select" required><!--aria-label="Default select example"-->
+                                    <option selected="" value="Default">(Select a choice)</option>
+                                    <option value="0-5 years">0-5 years</option>
+                                    <option value="6-10 years">6-10 years</option>
+                                    <option value="11-15 years">11-15 years</option>
+                                    <option value="16-20 years">16-20 years</option>
+                                    <option value="20+ years">20+ years</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <hr class="hrForm2">
+                        <div class="row">
+                            <div class="col-md-10"> <!--style: display: none;-->
+                                <label for="commentTextLabel" class="form-label">Do you have any questions?</label>
+                                <textarea class="form-control" name="commentText" id="commentText" placeholder="If so, plese type here your question" style="height: 100px" autocomplete="off"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="alert alert-dark" role="alert">
+                                    <h5 class="alert-heading">Note</h5>
+                                    <p>Thank you very much for your interest. Please remember that while we review every application carefully, submitting one does not claim an animal. Please be aware that during busy times it may take up to 72 hours for an adoption specialist to reach out to you through email and further make an appointment, so you can visit the pet that you are interested, in the shelter that is currently located.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!--Submit button>-->
+
+                            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                            <div id="buttonContainer">
+                                <input id="orderButton" type="submit" name="submit" class="btn btn-primary" value="Submit" onClick="return formValidation();" />
+                                <input id="resetButton" type="reset" name="reset" class="btn btn-outline-secondary" value="Clear Form" onClick="return confirmreset()" />
+                            </div>
+
+                        </form>
+                <!--</div>-->
+            </div>
+            </div>
+            </div>
+        </div>
+        <!--End fullForm2-->
+
+
+
+
+        <!--Pagination-->
+        <!--<ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item">
+              <a class="page-link" href="/volunteerForm">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/volunteerForm">1</a></li>
+            <li class="page-item active"><a class="page-link" href="/volunteerForm2">2</a></li>
+            <li class="page-item disabled">
+              <a class="page-link">Next</a>
+            </li>
+        </ul>-->
+
+
+
+        <script src="/volunteer2"></script>
+
+{% endblock %}

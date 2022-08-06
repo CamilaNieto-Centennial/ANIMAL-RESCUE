@@ -1,0 +1,369 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Adopt Rodents
+{% endblock %}
+
+{% block main %}
+
+
+
+        <!--- Our available properties (welcome) -->
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Adopt a Rodent/Rabbit</h1>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <!--- Cards -->
+        <div class="container-fluid padding">
+            <div class="row padding" id="smallPadding">
+
+                <!--Holly-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/76sqTfdT/0.png" alt="Second dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Holly</h4>
+                            <h5 class="card-text">Female</h5>
+                            <p class="card-text">Rabbit</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Holly">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Ladybug-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/JhjyJc5H/1.jpg" alt="Third dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Ladybug</h4>
+                            <h5 class="card-text">Female</h5>
+                            <p class="card-text">Guinea Pig</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Ladybug">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Tonks-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/8cXsDyN9/1.jpg" alt="First dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Tonks</h4>
+                            <h5 class="card-text">Male</h5>
+                            <p class="card-text">Mouse</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Tonks">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <hr class="my-4">
+        </div>
+
+
+
+
+
+            <!--MODALS-->
+            <!--Holly-->
+                        <div class="modal fade" id="Holly" tabindex="-1" aria-labelledby="HollyLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="HollyLabel">Holly</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                        <img src="https://i.postimg.cc/76sqTfdT/0.png" class="w-100" alt="First slide" data-interval="1000" >
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Holly</h3>
+                                                    <!--<h5 class="pb-2">Price</h5>-->
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>American / Mixed</li>
+                                                        <li><strong>Sex: </strong>Female</li>
+                                                        <li><strong>Color: </strong>Brown</li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                        <li><strong>Estimated Birthdate: </strong>August 18, 2019</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Holly is a shy girl who's had a bit of a rough time. She and her sister were dumped outside in Las Vegas, and now they are looking for their forever home. A little TLC will go a long way with these two cuties.
+                                                </p>
+                                                <p>
+                                                    Because of their charming and distinctive personalities, rabbits make wonderful pets. Although they can be social with their human families, bunnies need the companionship of their own kind to thrive. From kissing and cuddling to sleeping and playing, bonded rabbits live as a pair and do everything together to ensure each other's safety and comfort. Without a companion, rabbits become lonely, depressed and anxious.
+                                                </p>
+                                                <p>
+                                                    So that our rabbits live their longest, healthiest and happiest lives, we have bonded them with a companion, and we only offer them for adoption in these pairs. Since bonded bunnies share the same bed, exercise pen, litter box, and food and water dishes, caring for two rabbits is just as easy as caring for one. So not only will you save two lives, but you'll also enjoy watching your two rabbits hop, play, snuggle and enjoy their new home together.
+                                                </p>
+                                                <p>
+                                                    Please fill out an application if you are interested in meeting Holly.
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+            <!--Ladybug-->
+                        <div class="modal fade" id="Ladybug" tabindex="-1" aria-labelledby="LadybugLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="LadybugLabel">Ladybug</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                    <!--Beggining carousel-->
+                                                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                        <div class="carousel-indicators">
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                        </div>
+
+                                                        <div class="carousel-inner">
+
+                                                          <div class="carousel-item active">
+                                                            <img src="https://i.postimg.cc/JhjyJc5H/1.jpg" class="w-100" alt="First slide" data-interval="1000" >
+                                                          </div>
+
+                                                          <div class="carousel-item">
+                                                            <img src="https://i.postimg.cc/x1wJcFMS/2.jpg" class="w-100" alt="Second slide" data-interval="1000" >
+                                                          </div>
+
+                                                          <div class="carousel-item">
+                                                            <img src="https://i.postimg.cc/RF9WT6gs/3.jpg" class="w-100" alt="Third slide" data-interval="1000" >
+                                                          </div>
+
+                                                        </div>
+
+                                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                      </div>
+                                                      <!--End carousel-->
+
+
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Ladybug</h3>
+
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>Guinea Pig</li>
+                                                        <li><strong>Sex: </strong>Female</li>
+                                                        <li><strong>Color: </strong>Multi/Mixed</li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Ladybug is sweet and demure. This little cutie is ready to fly to her forever home along side her bonded partner Bumblebee! Please fill out an application if you are interested in meeting Ladybug.
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            <!--Tonks-->
+                        <div class="modal fade" id="Tonks" tabindex="-1" aria-labelledby="TonksLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="TonksLabel">Tonks</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                    <!--Beggining carousel-->
+                                                    <div id="myCarousel1" class="carousel slide" data-bs-ride="carousel">
+                                                        <div class="carousel-indicators">
+                                                          <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                          <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                        </div>
+
+                                                        <div class="carousel-inner">
+
+                                                          <div class="carousel-item active">
+                                                            <img src="https://i.postimg.cc/8cXsDyN9/1.jpg" class="w-100" alt="First slide" data-interval="1000" >
+                                                          </div>
+
+                                                          <div class="carousel-item">
+                                                            <img src="https://i.postimg.cc/SQgnWKCd/2.jpg" class="w-100" alt="Second slide" data-interval="1000" >
+                                                          </div>
+
+                                                        </div>
+
+                                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel1" data-bs-slide="prev">
+                                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel1" data-bs-slide="next">
+                                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                      </div>
+                                                      <!--End carousel-->
+
+
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Tonks</h3>
+
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>Mouse</li>
+                                                        <li><strong>Sex: </strong>Female</li>
+                                                        <li><strong>Color: </strong>Multi/Mixed</li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Tonks is the sweetest mouse you ever did see! This mice is full of big personality and she is ready to join your family! If you're interested in what it would take to bring this baby home, fill out her application below and we'd love to tell you all about her!
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+{% endblock %}
+

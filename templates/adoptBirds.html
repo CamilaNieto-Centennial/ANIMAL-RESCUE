@@ -1,0 +1,330 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Adopt Birds
+{% endblock %}
+
+{% block main %}
+
+
+
+        <!--- Our available properties (welcome) -->
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div id="properties" class="col-12">
+                    <h1 class="display-4">Adopt a Bird</h1>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <!--- Cards -->
+        <div class="container-fluid padding">
+            <div class="row padding" id="smallPadding">
+
+                <!--Buttons-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/KvDs9nqB/1.jpg" alt="Second dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Buttons</h4>
+                            <h5 class="card-text">Female</h5>
+                            <p class="card-text">Macaw</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Buttons">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Mimi-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/TPFkyQ1M/1.jpg" alt="Third dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Mimi</h4>
+                            <h5 class="card-text">Female</h5>
+                            <p class="card-text">Amazon</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Mimi">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Spiderman-->
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card">
+                        <img class="card-img-top" id="responsiveImage" src="https://i.postimg.cc/T1XC0wnt/1.jpg" alt="First dog">
+                        <div class="card-body">
+                            <h4 class="card-title">Spiderman</h4>
+                            <h5 class="card-text">Male</h5>
+                            <p class="card-text">Cockatoo</p>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Spiderman">
+                                See Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <hr class="my-4">
+        </div>
+
+
+
+
+
+            <!--MODALS-->
+            <!--Buttons-->
+                        <div class="modal fade" id="Buttons" tabindex="-1" aria-labelledby="ButtonsLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ButtonsLabel">Buttons</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                    <!--Beggining carousel-->
+                                                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                        <div class="carousel-indicators">
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                        </div>
+
+                                                        <div class="carousel-inner">
+
+                                                          <div class="carousel-item active">
+                                                            <img src="https://i.postimg.cc/KvDs9nqB/1.jpg" class="w-100" alt="First slide">
+                                                          </div>
+
+                                                          <div class="carousel-item">
+                                                            <img src="https://i.postimg.cc/3xrfzdV6/3.jpg" class="w-100" alt="Second slide">
+                                                          </div>
+
+                                                          <div class="carousel-item">
+                                                            <img src="https://i.postimg.cc/HkSvmTCL/4.jpg" class="w-100" alt="Third slide">
+                                                          </div>
+
+                                                        </div>
+
+
+                                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                      </div>
+                                                      <!--End carousel-->
+
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Buttons</h3>
+                                                    <!--<h5 class="pb-2">Price</h5>-->
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>Macaw</li>
+                                                        <li><strong>Sex: </strong>Female</li>
+                                                        <li><strong>Color: </strong>Red</li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Buttons is friendly, chatty, and social. She is shy meeting new people but once she considers you a friend, Buttons wants to be the center of attention. Buttons would do best in a home who wants a buddy to do everything with. Because she is still learning to show confidence in new situations, Buttons would do best in a calmer household. Please fill out an application if you are interested in meeting Buttons.
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+            <!--Mimi-->
+                        <div class="modal fade" id="Mimi" tabindex="-1" aria-labelledby="MimiLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="MimiLabel">Mimi</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                    <img src="https://i.postimg.cc/TPFkyQ1M/1.jpg" class="w-100" alt="First slide">
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Mimi</h3>
+
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>Amazon</li>
+                                                        <li><strong>Sex: </strong>Female</li>
+                                                        <li><strong>Color: </strong>Yellow </li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Mimi is new to "ANIMAL RESCUE" and we are still getting to know her! She is on a strict diet and exercise plan that would need to continue in her forever home. Mimi loves to show off her vocals but is still working on her confidence out of the cage. If you are interested in meeting Mimi, please fill out an application!
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+            <!--Spiderman-->
+                        <div class="modal fade" id="Spiderman" tabindex="-1" aria-labelledby="SpidermanLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="SpidermanLabel">Spiderman</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+
+
+                                        <!--<section class="sproduct">-->
+                                            <div class="row"><!--mt-5-->
+
+                                                <!-- Left column -->
+                                                <div class="col-sm-6"><!--class="col-lg-12 col-md-12 col-12"-->
+
+                                                    <img src="https://i.postimg.cc/T1XC0wnt/1.jpg" class="w-100" alt="First slide">
+
+                                                </div><!--End Left column-->
+
+
+
+                                                <!--Right column-->
+                                                <div class="col-sm-6" style="text-align:left;"> <!--class="col-lg-6 col-md-12 col-12"-->
+                                                    <h3>Spiderman</h3>
+
+                                                    <h5>Details</h5>
+                                                    <ul class="pb-2">
+                                                        <li><strong>Race: </strong>Cockatoo</li>
+                                                        <li><strong>Sex: </strong>Male</li>
+                                                        <li><strong>Color: </strong>White</li>
+                                                        <li><strong>Location: </strong>Sanctuary (Kanab)</li>
+                                                    </ul>
+
+
+                                                </div><!--End Right column-->
+
+
+                                            </div> <!--End row-->
+
+
+
+                                            <div class="row" style="text-align:left;">
+                                                <!--Info list-->
+                                                <p>
+                                                    Spiderman is an energetic and curious Sulphur Crested Cockatoo. He gets very excited by the world around him, but because his body language can be subtle, Spiderman would do best in a home with cockatoo experience. If you are interested in meeting Spiderman, please fill out an application.
+                                                </p>
+                                            </div>
+                                        <!--</section>-->
+
+
+                                    </div><!--End Modal Body-->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                        <a href="/adoptForm"><button type="button" class="btn btn-primary">Adopt me</button></a> <!--Adopt-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+{% endblock %}

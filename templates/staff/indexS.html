@@ -1,0 +1,64 @@
+{% extends "/staff/layoutS.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <img src="https://media-be.chewy.com/wp-content/uploads/2020/10/28102619/pet-adoption-statistics-1024x548.jpg" alt="Main Staff" id="img-center" class="img-fluid mx-auto d-block"/><!--class="img-responsive"-->
+                <!--<div class="carousel-caption">
+                    <h1 class="display-2">ANIMAL RESCUE</h1>
+                  </div>-->
+              </div>
+            </div>
+        </div>
+
+
+
+
+        <!--- Welcome Section -->
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+                    <h1 class="display-4" id="volunteer">Welcome back {{ staffUsername }}!</h1>
+                </div>
+                <hr>
+                    <h4>LET'S CHECK THE NEW CHANGES</h4>
+            </div>
+        </div>
+
+
+
+        <!--- Two Column Section -->
+        <div class="container-fluid padding">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12" id="rowText">
+
+                    <div class="row welcome text-center" style="padding-top: 0rem;">
+                        <div class="col-12" style="padding: 0rem;">
+                            <a href="/staff/newAdopter" style="padding-bottom: 1 rem;"><button type="button" class="btn btn-primary btn-lg">NEW ADOPTER</button></a>
+                            <a href="/staff/newVolunteer"><button type="button" class="btn btn-warning btn-lg">NEW VOLUNTEER</button></a>
+                            <a href="/staff/newFosterer"><button type="button" class="btn btn-secondary btn-lg">NEW FOSTERER</button></a>
+                            <a href="/staff/newEducator"><button type="button" class="btn btn-info btn-lg">NEW EDUCATOR</button></a>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <hr class="my-4">
+        </div>
+
+
+
+
+
+{% endblock %}

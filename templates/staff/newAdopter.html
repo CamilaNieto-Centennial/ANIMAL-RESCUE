@@ -1,0 +1,85 @@
+{% extends "/staff/layoutStables.html" %}
+
+{% block title %}
+    New Adopter
+{% endblock %}
+
+{% block main %}
+
+
+
+        <!--- Welcome Section -->
+        <div class="container-fluid padding" style="padding-bottom: 0rem; padding-top: 1.5rem;">
+            <div class="row padding text-center" style="padding-bottom: 0rem;">
+                <!--<div class="col-12">-->
+                    <h1 class="display-4" >New Adopters</h1>
+                <!--</div>-->
+
+            </div>
+            <hr class="my-4">
+        </div>
+
+
+
+        <!--- Two Column Section -->
+        <!--<div class="container-fluid padding">
+            <div class="row padding">
+                <div class="col-md-12 col-lg-12" id="rowText">-->
+        <div class="container-fluid padding">
+            <div class="row padding">
+                <!--<div class="col-md-12 col-lg-12" id="rowText"></div>-->
+                <!--<h2>HELP US</h2>-->
+
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Pet Name</th>
+                                <th>More</th>
+                                <th>Date</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in db %}
+                            <tr>
+                                <td>{{ row.username }}</td>
+                                <td>{{ row.firstName }}</td>
+                                <td>{{ row.PName }}</td>
+                                <td>
+                                    <!--<a href="/staff/info"><button type="button" class="btn btn-primary btn-lg">MORE</button></a>-->
+                                    <form action="/staff/newAdopter" method="post">
+                                        <input name="userId" type="hidden" value="{{ row.userId }}">
+                                        <input class="btn btn-primary btn-md" type="submit" value="MORE">
+                                    </form>
+                                </td>
+                                <td>{{ row.date }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                <!--</div>-->
+            </div>
+
+        </div>
+
+
+                    <!--<div class="row welcome text-center" style="padding-top: 0rem;">
+                        <div class="col-12" style="padding: 0rem;">
+                            <a href="/join/volunteerForm.html"><button type="button" class="btn btn-primary btn-lg">VOLUNTEER</button></a>
+                            <a href="/join/fosterForm.html"><button type="button" class="btn btn-success btn-lg">FOSTER</button></a>
+                            <a href="/join/educateForm.html"><button type="button" class="btn btn-warning btn-lg">EDUCATE</button></a>
+                        </div>
+                    </div>-->
+
+               <!--</div>
+            </div>
+            <hr class="my-4">
+        </div>-->
+
+
+
+
+
+{% endblock %}
