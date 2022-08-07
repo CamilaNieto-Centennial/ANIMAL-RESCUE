@@ -192,7 +192,7 @@ def educateForm():
         date = datetime.datetime.now()
 
         # Insert new request (Educator) for that specific user
-        db.execute("INSERT INTO educators (userId, firstName, lastName, email, date) VALUES (?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO educators (userId, firstName, lastName, email, date) VALUES (%s, %s, %s, %s, %s)",
                     userId, educateValues[0], educateValues[1], educateValues[2], date)
 
 
