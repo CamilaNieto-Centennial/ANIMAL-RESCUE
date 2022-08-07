@@ -625,7 +625,7 @@ def staffnewVolunteer():
 
 
 
-@app.route("/staff/infoF")
+@app.route("/staff/infoF", methods=["GET", "POST"])
 @login_requiredStaff
 def staffInfoF():
     """Show More Info Staff (Foster)"""
@@ -648,7 +648,7 @@ def staffInfoF():
 
 
 
-@app.route("/staff/infoV")
+@app.route("/staff/infoV", methods=["GET", "POST"])
 @login_requiredStaff
 def staffInfoV():
     """Show More Info Staff (Volunteer)"""
@@ -670,13 +670,13 @@ def staffInfoV():
         return render_template("/staff/infoV.html", clientUsername=userName, db1=volunteersDB, db2=volunteers2DB)
 
 
-@app.route("/staff/infoA")
+@app.route("/staff/infoA", methods=["GET", "POST"])
 @login_requiredStaff
 def staffInfoA():
     """Show More Info Staff (Adopter)"""
     #return apologyStaff("More Info Staff (Adopter)")
 
-    id = request.args['id']
+    id = 2#request.args['id']
     print("From Second page")
     print(id)
     if request.method == "GET":
