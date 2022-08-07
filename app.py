@@ -87,7 +87,7 @@ def volunteerForm():
         date = datetime.datetime.now()
 
         # Insert new request (Volunteer) for that specific user
-        db.execute("INSERT INTO volunteers (userId, firstName, lastName, phone, email, age, birth, address, city, postal, province, country, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO volunteers (userid, firstname, lastname, phone, email, age, birth, address, city, postal, province, country, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, volunteerValues[0], volunteerValues[1], volunteerValues[2], volunteerValues[3], volunteerValues[4], volunteerValues[5], volunteerValues[6], volunteerValues[7], volunteerValues[8], volunteerValues[9], volunteerValues[10], date)
 
 
@@ -140,7 +140,7 @@ def fosterForm():
         date = datetime.datetime.now()
 
         # Insert new request (Foster) for that specific user
-        db.execute("INSERT INTO fosterers (userId, firstName, lastName, phone, email, age, address, city, postal, province, country, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO fosterers (userid, firstname, lastname, phone, email, age, address, city, postal, province, country, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, fosterValues[0], fosterValues[1], fosterValues[2], fosterValues[3], fosterValues[4], fosterValues[5], fosterValues[6], fosterValues[7], fosterValues[8], fosterValues[9], date)
 
 
@@ -247,7 +247,7 @@ def adoptForm():
         date = datetime.datetime.now()
 
         # Insert new request (Adopt) for that specific user
-        db.execute("INSERT INTO adopters (userId, firstName, lastName, phone, email, age, address, city, postal, province, country, petType, PName, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO adopters (userid, firstname, lastname, phone, email, age, address, city, postal, province, country, pettype, pname, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, adoptValues[0], adoptValues[1], adoptValues[2], adoptValues[3], adoptValues[4], adoptValues[5], adoptValues[6], adoptValues[7], adoptValues[8], adoptValues[9], adoptValues[10], adoptValues[11], date)
 
 
@@ -325,7 +325,7 @@ def volunteerForm2():
         date = datetime.datetime.now()
 
         # Insert new request (Volunteer 2) for that specific user
-        db.execute("INSERT INTO volunteers2 (userId, whyVolunteer, enjoy, gainText, daysWeek, timesDay, skills, expText, currentOcp, yearsOcp, questions, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO volunteers2 (userid, whyvolunteer, enjoy, gaintext, daysweek, timesday, skills, exptext, currentocp, yearsocp, questions, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, volunteerValues[0], str1, volunteerValues[2], str3, str4, str5, volunteerValues[6], volunteerValues[7], volunteerValues[8], volunteerValues[9], date)
 
 
@@ -382,7 +382,7 @@ def fosterForm2():
         date = datetime.datetime.now()
 
         # Insert new request (Foster 2) for that specific user
-        db.execute("INSERT INTO fosterers2 (userId, petsCurrently, minors, houseType, fencedYard, additionalExp, animalType, questions, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO fosterers2 (userid, petscurrently, minors, housetype, fencedyard, additionalexp, animaltype, questions, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, fosterValues[0], fosterValues[1], fosterValues[2], fosterValues[3], fosterValues[4], str5, fosterValues[6], date)
 
 
@@ -444,7 +444,7 @@ def adoptForm2():
         date = datetime.datetime.now()
 
         # Insert new request (Adopt) for that specific user
-        db.execute("INSERT INTO adopters2 (userId, houseType, adults, minors, frequency, petsBefore, petsCurrently, visit, whenAdopt, questions, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        db.execute("INSERT INTO adopters2 (userid, housetype, adults, minors, frequency, petsbefore, petscurrently, visit, whenadopt, questions, date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                     userId, adoptValues[0], adoptValues[1], adoptValues[2], adoptValues[3], adoptValues[4], adoptValues[5], adoptValues[6], adoptValues[7], adoptValues[8], date)
 
 
@@ -553,7 +553,7 @@ def staffnewAdopter():
     if request.method == "GET":
 
         # Get values from "infoDB" table  (ORDER BY date DESC)
-        infoDB = db.execute("SELECT users.username, adopters.userId, adopters.firstName, adopters.PName, adopters.date FROM adopters JOIN users ON users.id = adopters.userId")
+        infoDB = db.execute("SELECT users.username, adopters.userid, adopters.firstname, adopters.pname, adopters.date FROM adopters JOIN users ON users.id = adopters.userid")
 
         # Redirect user to home page
         return render_template("/staff/newAdopter.html", db=infoDB)
@@ -575,7 +575,7 @@ def staffnewEducator():
     if request.method == "GET":
 
         # Get values from "infoDB" table  (ORDER BY date DESC)
-        infoDB = db.execute("SELECT users.username, educators.firstName, educators.lastName, educators.email, educators.date FROM educators JOIN users ON users.id = educators.userId")
+        infoDB = db.execute("SELECT users.username, educators.firstname, educators.lastname, educators.email, educators.date FROM educators JOIN users ON users.id = educators.userid")
         return render_template("/staff/newEducator.html", db=infoDB)
 
 
@@ -587,7 +587,7 @@ def staffnewFosterer():
     if request.method == "GET":
 
         # Get values from "infoDB" table  (ORDER BY date DESC)
-        infoDB = db.execute("SELECT users.username, fosterers.userId, fosterers.firstName, fosterers.lastName, fosterers.date FROM fosterers JOIN users ON users.id = fosterers.userId")
+        infoDB = db.execute("SELECT users.username, fosterers.userid, fosterers.firstname, fosterers.lastname, fosterers.date FROM fosterers JOIN users ON users.id = fosterers.userid")
 
         # Redirect user to home page
         return render_template("/staff/newFosterer.html", db=infoDB)
@@ -609,7 +609,7 @@ def staffnewVolunteer():
     if request.method == "GET":
 
         # Get values from "infoDB" table  (ORDER BY date DESC)
-        infoDB = db.execute("SELECT users.username, volunteers.userId, volunteers.firstName, volunteers.lastName, volunteers.date FROM volunteers JOIN users ON users.id = volunteers.userId")
+        infoDB = db.execute("SELECT users.username, volunteers.userid, volunteers.firstname, volunteers.lastname, volunteers.date FROM volunteers JOIN users ON users.id = volunteers.userid")
 
         # Redirect user to home page
         return render_template("/staff/newVolunteer.html", db=infoDB)
@@ -640,8 +640,8 @@ def staffInfoF():
         clientName = db.execute("SELECT username FROM users WHERE id = ?", id)
         userName = clientName[0]["username"]  # Get the key pair of 'username'
 
-        fosterersDB = db.execute("SELECT * FROM fosterers WHERE userId = ?", id)
-        fosterers2DB = db.execute("SELECT * FROM fosterers2 WHERE userId = ?", id)
+        fosterersDB = db.execute("SELECT * FROM fosterers WHERE userid = ?", id)
+        fosterers2DB = db.execute("SELECT * FROM fosterers2 WHERE userid = ?", id)
 
         # Redirect user to More Info (Foster) page
         return render_template("/staff/infoF.html", clientUsername=userName, db1=fosterersDB, db2=fosterers2DB)
@@ -663,8 +663,8 @@ def staffInfoV():
         clientName = db.execute("SELECT username FROM users WHERE id = ?", id)
         userName = clientName[0]["username"]  # Get the key pair of 'username'
 
-        volunteersDB = db.execute("SELECT * FROM volunteers WHERE userId = ?", id)
-        volunteers2DB = db.execute("SELECT * FROM volunteers2 WHERE userId = ?", id)
+        volunteersDB = db.execute("SELECT * FROM volunteers WHERE userid = ?", id)
+        volunteers2DB = db.execute("SELECT * FROM volunteers2 WHERE userid = ?", id)
 
         # Redirect user to More Info (Volunteer) page
         return render_template("/staff/infoV.html", clientUsername=userName, db1=volunteersDB, db2=volunteers2DB)
@@ -685,8 +685,8 @@ def staffInfoA():
         clientName = db.execute("SELECT username FROM users WHERE id = ?", id)
         userName = clientName[0]["username"]  # Get the key pair of 'username'
 
-        adoptersDB = db.execute("SELECT * FROM adopters WHERE userId = ?", id)
-        adopters2DB = db.execute("SELECT * FROM adopters2 WHERE userId = ?", id)
+        adoptersDB = db.execute("SELECT * FROM adopters WHERE userid = ?", id)
+        adopters2DB = db.execute("SELECT * FROM adopters2 WHERE userid = ?", id)
 
         # Redirect user to More Info (Adopter) page
         return render_template("/staff/infoA.html", clientUsername=userName, db1=adoptersDB, db2=adopters2DB)
