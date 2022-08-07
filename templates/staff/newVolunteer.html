@@ -43,12 +43,12 @@
                             {% for row in db %}
                             <tr>
                                 <td>{{ row.username }}</td>
-                                <td>{{ row.firstName }}</td>
-                                <td>{{ row.lastName }}</td>
+                                <td>{{ row.firstname }}</td>
+                                <td>{{ row.lastname }}</td>
                                 <td>
                                     <!--<a href="/staff/info"><button type="button" class="btn btn-primary btn-lg">MORE</button></a>-->
                                     <form action="/staff/newVolunteer" method="post">
-                                        <input name="userId" type="hidden" value="{{ row.userId }}">
+                                        <input name="userid" type="hidden" value="{{ row.userid }}">
                                         <input class="btn btn-primary btn-md" type="submit" value="MORE">
                                     </form>
                                 </td>
