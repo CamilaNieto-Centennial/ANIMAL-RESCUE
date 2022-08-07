@@ -770,11 +770,13 @@ def registerStaff():
 
         if request.form.get("password") != request.form.get("confirmation"):
             return apologyStaff("Passwords don't match", 400)
+        
+        date = datetime.datetime.now()
 
         # Insert new user
         try:
-            newUser = db.execute("INSERT INTO staff (username, hash) VALUES (?, ?)", request.form.get(
-                "username"), generate_password_hash(request.form.get("password")))
+            newUser = db.execute("INSERT INTO staff (username, hash, date) VALUES (?, ?, ?)", request.form.get(
+                "username"), generate_password_hash(request.form.get("password")), date)
         except:
             return apologyStaff("Username already exits")
 
@@ -869,10 +871,12 @@ def register():
         if request.form.get("password") != request.form.get("confirmation"):
             return apology("Passwords don't match", 400)
 
+        date = datetime.datetime.now()
+        
         # Insert new user
         try:
-            newUser = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get(
-                "username"), generate_password_hash(request.form.get("password")))
+            newUser = db.execute("INSERT INTO users (username, hash, date) VALUES (?, ?, ?)", request.form.get(
+                "username"), generate_password_hash(request.form.get("password")), date)
         except:
             return apology("Username already exits")
 
