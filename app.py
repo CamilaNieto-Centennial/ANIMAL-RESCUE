@@ -560,7 +560,7 @@ def staffnewAdopter():
 
     else:
         #Getting 'userId' from form, and redirect to a new page, and send 'id' vale
-        id = request.form.get("userId")
+        id = request.form.get("userid")
         print("From main page")
         print(id)
 
@@ -594,7 +594,7 @@ def staffnewFosterer():
 
     else:
         #Getting 'userId' from form, and redirect to a new page, and send 'id' vale
-        id = request.form.get("userId")
+        id = request.form.get("userid")
         print("From main page")
         print(id)
 
@@ -616,7 +616,7 @@ def staffnewVolunteer():
 
     else:
         #Getting 'userId' from form, and redirect to a new page, and send 'id' vale
-        id = request.form.get("userId")
+        id = request.form.get("userid")
         print("From main page")
         print(id)
 
@@ -676,7 +676,7 @@ def staffInfoA():
     """Show More Info Staff (Adopter)"""
     #return apologyStaff("More Info Staff (Adopter)")
 
-    id = 2#request.args['id']
+    id = request.args['id']
     print("From Second page")
     print(id)
     if request.method == "GET":
