@@ -11,7 +11,12 @@
 <p>On the clients' webpage, the customers can log in, register, adopt a pet, volunteer, foster, or become an educator. The data submitted by the customers is saved to the database and uploaded to the Staff webpage. Staff members can log in, register, and check the new updates.</p>
 <p>Finally, this website was made in honor of my best friend, brother, and pet <strong>Pancho</strong>. <strong>R.I.P.</strong> 🐩♥</p>
 <p>So, please take around my website 😄🙃</p>
-
+<br>
+<h3>Coming soon:</h3>
+<ul>
+    <li>Update app.py file, so the user can edit/add information(register/send info by forms). Fix that issue by doing <code>INSERT INTO table (<strong>id</strong>, column1, column2, ...) VALUES (<strong>last_id+1</strong>, value1, value2, ...)</code>. Remember that there's no AUTOINCREMENT attribute on id's columns for every table.</li>
+    <li>Create a table database for pets, so makes the website dynamic. </li>
+</ul>
 <br>
 <h3>References:</h3>
 <p>The content inside the webpage was taken from inspiration from various sources. As well, the information and images of pets were taken from:</p>
