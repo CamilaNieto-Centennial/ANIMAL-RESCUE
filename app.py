@@ -826,7 +826,8 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        try:
+            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         except Exception as e:
             db.session.rollback()  # Rollback the transaction if there's an error
             print(f"Database error during login: {e}")
