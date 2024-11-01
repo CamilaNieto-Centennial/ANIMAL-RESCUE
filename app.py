@@ -783,8 +783,8 @@ def registerStaff():
             newUser = db.execute("INSERT INTO staff (username, hash, date) VALUES (?, ?, ?)", request.form.get(
                 "username"), generate_password_hash(request.form.get("password")), date)
             
-        # Remember the new user
-        session["user_id"] = newUser
+            # Remember the new user
+            session["user_id"] = newUser
         except Exception as e:
             db.session.rollback()  # Rollback transaction on error
             print(f"Database error during staff registration: {e}")
