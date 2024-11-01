@@ -722,8 +722,13 @@ def loginStaff():
         elif not request.form.get("password"):
             return apologyStaff("must provide password", 403)
 
-        # Query database for username
-        rowsS = db.execute("SELECT * FROM staff WHERE username = ?", request.form.get("username"))
+        # Query database for username with error handling
+        try:
+            rowsS = db.execute("SELECT * FROM staff WHERE username = ?", request.form.get("username"))
+        except Exception as e:
+            db.session.rollback()  # Rollback the transaction on error
+            print(f"Database error during staff login: {e}")
+            return apologyStaff("Database error. Please try again.", 500)
 
         # Ensure username exists and password is correct
         if len(rowsS) != 1 or not check_password_hash(rowsS[0]["hash"], request.form.get("password")):
@@ -777,11 +782,13 @@ def registerStaff():
         try:
             newUser = db.execute("INSERT INTO staff (username, hash, date) VALUES (?, ?, ?)", request.form.get(
                 "username"), generate_password_hash(request.form.get("password")), date)
-        except:
-            return apologyStaff("Username already exits")
-
+            
         # Remember the new user
         session["user_id"] = newUser
+        except Exception as e:
+            db.session.rollback()  # Rollback transaction on error
+            print(f"Database error during staff registration: {e}")
+            return apologyStaff("Username already exits", 400)
 
         return redirect("/staff/")
 
@@ -820,6 +827,10 @@ def login():
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        except Exception as e:
+            db.session.rollback()  # Rollback the transaction if there's an error
+            print(f"Database error during login: {e}")
+            return apology("Database error. Please try again.", 500)
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
@@ -877,11 +888,11 @@ def register():
         try:
             newUser = db.execute("INSERT INTO users (username, hash, date) VALUES (?, ?, ?)", request.form.get(
                 "username"), generate_password_hash(request.form.get("password")), date)
-        except:
-            return apology("Username already exits")
-
-        # Remember the new user
-        session["user_id"] = newUser
+            session["user_id"] = newUser  # Remember the new user
+        except Exception as e:
+            db.session.rollback()  # Rollback if there’s an error
+            print(f"Database error during registration: {e}")
+            return apology("Username already exits", 400)
 
         return redirect("/")
 
